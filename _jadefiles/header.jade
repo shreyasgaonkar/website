@@ -1,0 +1,21 @@
+mixin nav-content()
+  ul
+    li: a(href="#about") About
+    li: a(href="#youtube") YouTube
+    li: a(href="#work") Work
+    li: a(href="#design") Design
+    li: a(href="#contact") Contact
+
+.mobile-nav
+  +nav-content()
+
+header
+  .header-position
+    h1.logo Shreyas Gaonkar
+
+    nav.site-nav
+      +nav-content()
+
+    a(href="mailto:shreyas.gaonkar@yahoo.com").email-link +email me
+
+    .mobile-nav-toggle: span
