@@ -7,6 +7,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,400i&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -306,6 +307,42 @@ template {
 [hidden] {
   display: none; }
 
+/* latin-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Fira Sans Italic"), local("FiraSans-Italic"), url(https://fonts.gstatic.com/s/firasans/v10/va9C4kDNxMZdWfMOD5VvkrjHYTLHdQ.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Fira Sans Italic"), local("FiraSans-Italic"), url(https://fonts.gstatic.com/s/firasans/v10/va9C4kDNxMZdWfMOD5VvkrjJYTI.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* latin-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(https://fonts.gstatic.com/s/firasans/v10/va9E4kDNxMZdWfMOD5VvmYjLeTY.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(https://fonts.gstatic.com/s/firasans/v10/va9E4kDNxMZdWfMOD5Vvl4jL.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 .big,
 .bigger,
 .gigantic,
@@ -317,7 +354,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #BD5248;
+  color: #bd5248;
   font-weight: bold; }
 
 .gigantic {
@@ -353,6 +390,10 @@ small {
 
 p {
   margin: 0 0 20px; }
+  p::-moz-selection {
+    background: rgba(255, 237, 102, 0.25); }
+  p::selection {
+    background: rgba(255, 237, 102, 0.25); }
 
 em {
   font-style: italic; }
@@ -368,10 +409,17 @@ hr {
   height: 0; }
 
 a {
-  color: #BD5248;
+  color: #ff5e5b;
   text-decoration: none; }
   a:hover {
     color: #9a4038; }
+
+body {
+  background: #ffffea;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Fira Sans", sans-serif;
+  color: #2e2d33; }
 
 .home-wrap .mobile-nav {
   display: none;
@@ -484,7 +532,7 @@ a {
     .home-wrap header .site-nav {
       display: none; }
     .home-wrap header .logo {
-      height: 50px; }
+      height: 48px; }
     .home-wrap header .mobile-nav-toggle {
       display: -ms-flexbox;
       display: flex; }
@@ -493,11 +541,97 @@ a {
     -webkit-transform: translateY(0%);
             transform: translateY(0%); } }
 
+section.about {
+  background-image: url("/assets/images/about-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  section.about h2 {
+    color: #3f3f42;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -108px; }
+  section.about .home-lead {
+    padding-bottom: 50px; }
+
+@media (max-width: 1024px) {
+  section.about h2 {
+    margin-left: -40px; } }
+
+@media (max-width: 900px) {
+  section.about h2 {
+    margin-left: -20px; } }
+
+@media (max-width: 850px) {
+  section.about h2 {
+    margin-left: 0; } }
+
+@media (max-width: 650px) {
+  .push-left {
+    margin-right: 230px !important; } }
+
+@media (max-width: 550px) {
+  section.about {
+    background-position: 70% 50%; } }
+
+@media (max-width: 500px) {
+  .push-left {
+    margin-right: 0 !important; } }
+
 .home-wrap {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh; }
 
+.home-sections {
+  -ms-flex: 1;
+      flex: 1; }
+  .home-sections section {
+    padding: 50px 0; }
+  .home-sections .flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: rows;
+        flex-direction: rows; }
+  .home-sections .flex--center {
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .home-sections .flex--space-around {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .home-sections .order-first {
+    -ms-flex-order: -1;
+        order: -1; }
+
+.col-1 {
+  max-width: 300px;
+  margin: 0 10px; }
+
+.col-2 {
+  max-width: 620px;
+  margin: 0 10px;
+  background: honeydew; }
+
+.col-50 {
+  width: 50%;
+  background: rgba(255, 255, 0, 0.5); }
+
+.push-left {
+  margin-right: 330px; }
+
+.home-lead {
+  font-size: 36px;
+  line-height: 1; }
+
 @media (max-width: 775px) {
   .home-wrap {
     display: block; } }
+
+@media (max-width: 640px) {
+  .home-sections .flex {
+    display: block; }
+    .home-sections .flex .col-1 {
+      max-width: 100%; }
+    .home-sections .flex .col-50 {
+      width: auto; } }

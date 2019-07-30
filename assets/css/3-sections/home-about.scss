@@ -1,0 +1,55 @@
+section.about {
+  background-image: url("/assets/images/about-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h2 {
+    color: #3f3f42;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -108px;
+  }
+
+  .home-lead {
+    padding-bottom: 50px;
+    // color: $color4;
+  }
+}
+
+@media (max-width: 1024px) {
+  section.about h2 {
+    margin-left: -40px;
+  }
+}
+
+@media (max-width: 900px) {
+  section.about h2 {
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 850px) {
+  section.about h2 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .push-left {
+    margin-right: 230px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  section.about {
+    background-position: 70% 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .push-left {
+    margin-right: 0 !important;
+  }
+}

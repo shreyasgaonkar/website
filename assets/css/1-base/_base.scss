@@ -1,3 +1,6 @@
+// Google Font - Fira Sans
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,400i&display=swap");
+
 //	Headings
 
 .big,
@@ -55,6 +58,10 @@ small {
 
 p {
   margin: 0 0 20px;
+
+  &::selection {
+    background: rgba($color5, 0.25);
+  }
 }
 
 em {
@@ -74,10 +81,20 @@ hr {
 }
 
 a {
-  color: $accent-color;
+  // color: $accent-color;
+  color: $color2;
   text-decoration: none;
 
   &:hover {
     color: darken($accent-color, 10%);
   }
+}
+
+body {
+  // background: $bg-color;
+  background: $color4;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Fira Sans", sans-serif;
+  color: $text-color;
 }
