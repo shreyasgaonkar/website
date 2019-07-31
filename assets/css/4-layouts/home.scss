@@ -14,7 +14,7 @@
 
   .flex {
     display: flex;
-    flex-direction: rows;
+    flex-direction: row;
   }
 
   .flex--center {
@@ -57,6 +57,14 @@
 .home-lead {
   font-size: 36px;
   line-height: 1;
+
+  &.outdented {
+    text-indent: -0.75em;
+
+    @media (max-width: 820px) {
+      text-indent: 0;
+    }
+  }
 }
 
 @media (max-width: 775px) {

@@ -57,6 +57,7 @@ small {
 // Basic Text Style
 
 p {
+  font-size: 16px;
   margin: 0 0 20px;
 
   &::selection {
@@ -91,8 +92,8 @@ a {
 }
 
 body {
-  // background: $bg-color;
-  background: $color4;
+  background: $bg-color;
+  // background: $color4;
   font-size: 14px;
   line-height: 1.6;
   font-family: "Fira Sans", sans-serif;

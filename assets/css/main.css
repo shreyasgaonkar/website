@@ -389,6 +389,7 @@ small {
   line-height: 1.2; }
 
 p {
+  font-size: 16px;
   margin: 0 0 20px; }
   p::-moz-selection {
     background: rgba(255, 237, 102, 0.25); }
@@ -415,11 +416,37 @@ a {
     color: #9a4038; }
 
 body {
-  background: #ffffea;
+  background: #f6f6f8;
   font-size: 14px;
   line-height: 1.6;
   font-family: "Fira Sans", sans-serif;
   color: #2e2d33; }
+
+.home-cta {
+  font-size: 28px;
+  display: block;
+  text-align: center;
+  padding: 0.4em 0;
+  line-height: 1.25;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease-in-out; }
+
+.flex-video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56%;
+  position: relative; }
+
+.flex-video iframe,
+.flex-video embed,
+.flex-video video,
+.flex-video object {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0; }
 
 .home-wrap .mobile-nav {
   display: none;
@@ -463,7 +490,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 80px;
+    height: 70px;
     padding: 0;
     margin: 0; }
   .home-wrap header .site-nav ul {
@@ -542,6 +569,7 @@ body {
             transform: translateY(0%); } }
 
 section.about {
+  background-color: black;
   background-image: url("/assets/images/about-bg.jpg");
   background-position: center center;
   background-size: cover;
@@ -579,6 +607,55 @@ section.about {
   .push-left {
     margin-right: 0 !important; } }
 
+section.youtube {
+  background-color: #e20a0a;
+  background-image: url("/assets/images/youtube-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white; }
+  section.youtube .home-cta {
+    color: #e20a0a; }
+  section.youtube .flex-video {
+    box-shadow: 0px 4px 40px 3px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+    @media (max-width: 998px) {
+      section.youtube .flex-video {
+        -webkit-transform: scale(1);
+                transform: scale(1); } }
+  section.youtube .col-1 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    section.youtube .col-1 .video-strip {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: calc(100% + 100px);
+      margin: -50px 0;
+      background-image: url("/assets/images/youtube-bg.jpg");
+      background-position: center 0px;
+      background-repeat: repeat-y;
+      background-size: 70%; }
+      @media (max-width: 640px) {
+        section.youtube .col-1 .video-strip {
+          display: none; } }
+
+@media (max-width: 640px) {
+  section.youtube .col-1 {
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 50px 20px; }
+    section.youtube .col-1:last-child {
+      padding: 0px 20px 50px; } }
+
 .home-wrap {
   display: -ms-flexbox;
   display: flex;
@@ -592,8 +669,8 @@ section.about {
   .home-sections .flex {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: rows;
-        flex-direction: rows; }
+    -ms-flex-direction: row;
+        flex-direction: row; }
   .home-sections .flex--center {
     -ms-flex-pack: center;
         justify-content: center; }
@@ -623,6 +700,11 @@ section.about {
 .home-lead {
   font-size: 36px;
   line-height: 1; }
+  .home-lead.outdented {
+    text-indent: -0.75em; }
+    @media (max-width: 820px) {
+      .home-lead.outdented {
+        text-indent: 0; } }
 
 @media (max-width: 775px) {
   .home-wrap {
