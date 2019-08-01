@@ -1,0 +1,110 @@
+section.mentoring {
+  overflow: hidden;
+  color: white;
+  background-image: url("/assets/images/mentoring-bg.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .home-cta {
+    color: #2db8e1;
+  }
+
+  .home-lead {
+    margin-top: 250px;
+  }
+
+  .faces {
+    position: relative;
+    top: 80px;
+    height: calc(100% + 100px);
+    margin: -50px 0;
+    padding: 0;
+    list-style: none;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+
+    &.launched {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  .face {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(black, 0.4);
+
+    @media (min-width: 640px) {
+      &:last-child > .bubble {
+        width: 500px !important;
+      }
+    }
+  }
+
+  .bubble {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .face.has-bubble-open .bubble {
+    position: absolute;
+    bottom: 50%;
+    left: 100%;
+    display: block;
+    width: 400px;
+    margin-left: 10px;
+    padding: 20px;
+    transition: all 0.2s cubic-bezier(0, 0.53, 0.34, 1.5);
+    transform: scale(1);
+    transform-origin: bottom left;
+    opacity: 1;
+    border: 3px solid white;
+    border-radius: 40px 40px 40px 5px;
+    background: rgba(black, 0.8);
+
+    @media (max-width: 572px) {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  section.mentoring {
+    .faces {
+      padding-top: 360px;
+      margin: 0;
+      width: 115px * 4;
+      padding: 0;
+      top: 0;
+      left: 0;
+
+      &.launched {
+        padding-top: 360px;
+        margin-top: 100px;
+      }
+    }
+
+    .face {
+      display: inline-block;
+      margin-right: 35px;
+      float: left;
+    }
+
+    .face.has-bubble-open .bubble {
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      margin-left: 0;
+      bottom: 100%;
+      left: 30%;
+    }
+    .home-lead {
+      margin-top: 0;
+    }
+  }
+}
