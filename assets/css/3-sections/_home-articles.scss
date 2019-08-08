@@ -1,0 +1,119 @@
+section.article {
+  background: white url("/assets/images/book.jpg") 50% 55% repeat;
+
+  .col-1 {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-cta {
+    color: white;
+    background: #3d96cb;
+  }
+
+  .article-wrap {
+    margin: -50px 0;
+    @include clearfix;
+  }
+
+  .article-thumb {
+    display: block;
+    background-size: cover;
+    background-pozition: center;
+    width: 25%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &.is-visible {
+      opacity: 1;
+    }
+
+    &.is-emph {
+      animation-name: tada;
+      animation-duration: 1s;
+      animation-fill: both;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  .article-meta {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: fade-out(#3d96cb, 0.3);
+    color: white;
+    padding: 10px;
+    transform: translate(0%, 100%) scale(0.5);
+    transition: all 0.2s ease-in-out;
+
+    .name {
+      line-height: 1.2;
+      font-size: 18px;
+    }
+
+    .date {
+      font-style: italic;
+    }
+  }
+
+  .article-thumb:hover .article-meta {
+    opacity: 1;
+    transform: translate(0%, 0%) scale(1);
+  }
+
+  @media (max-width: 640px) {
+    .col-1 {
+      display: block;
+    }
+
+    .desc-wrap {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: 999px) and (min-width: 640px) {
+    .article-thumb {
+      width: calc(100% / 3);
+    }
+  }
+
+  @keyframes tada {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}

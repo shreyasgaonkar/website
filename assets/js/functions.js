@@ -1,6 +1,18 @@
 $(document).ready(function() {
   mentoringBubbleClick();
+
+  setInterval(function() {
+    articleTada();
+  }, 3000);
+
 });
+
+function articleTada() {
+  var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1;
+
+  $('.article-thumb').eq(randNum).addClass('is-emph').siblings().removeClass('is-emph');
+}
+
 
 function mentoringBubbleClick() {
   $('.face').on('click', function() {
@@ -39,7 +51,21 @@ function mentoringBubbleClick() {
 $(window).scroll(function() {
   youtubeVidScroll();
   startMentoring();
+  startArticles();
 });
+
+
+function startArticles() {
+  var wScroll = $(window).scrollTop();
+
+  if (($('section.article').offset().top - ($(window).height() / 2) < wScroll)) {
+    $('.article-thumb').each(function(i) {
+      setTimeout(function() {
+        $('.article-thumb').eq(i).addClass('is-visible');
+      }, 150 * i);
+    });
+  }
+}
 
 
 function startMentoring() {
@@ -59,6 +85,13 @@ function startMentoring() {
       // on mobile devices this should be fired asap
       $('.faces').addClass('launched');
       $('.face:nth-of-type(1)').addClass('has-bubble-open');
+
+      $('li.back-btn').on('click', function() {
+        $(this).removeClass('has-bubble-open');
+        $('.face:nth-of-type(1)').click();
+        // $('.face:nth-of-type(1)').addClass('has-bubble-open');
+
+      });
     }
   }
 }
@@ -72,3 +105,14 @@ function youtubeVidScroll() {
     $('.video-strip').css('background-position', 'center -' + (wScroll / 1.25) + 'px');
   }
 }
+
+
+
+url = config.local_url;
+$.getJSON(url, function(data) {
+  var img = data.data;
+
+  for (var i = 0; i < 9; i++) {
+    $('.instagram-widget').append('<a title="' + img[i].caption.text + '" target="_blank" href="' + img[i].link + '"><img class="insta-img" src="' + img[i].images.standard_resolution.url + '" /></a>');
+  }
+});

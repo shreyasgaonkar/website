@@ -22,6 +22,7 @@ section.mentoring {
     list-style: none;
     transition: all 0.5s ease-in-out;
     opacity: 0;
+    filter: grayscale(100%);
 
     &.launched {
       top: 0;
@@ -39,6 +40,14 @@ section.mentoring {
     background-position: center;
     background-size: cover;
     box-shadow: 0 4px 8px rgba(black, 0.4);
+
+    &.back-btn {
+      height: 80px;
+      width: 80px;
+      display: none;
+      background: white url("/assets/images/left.svg") center no-repeat;
+      background-size: 25px 25px;
+    }
 
     @media (min-width: 640px) {
       &:last-child > .bubble {
@@ -79,7 +88,7 @@ section.mentoring {
     .faces {
       padding-top: 360px;
       margin: 0;
-      width: 115px * 4;
+      width: 115px * 5;
       padding: 0;
       top: 0;
       left: 0;
@@ -94,6 +103,10 @@ section.mentoring {
       display: inline-block;
       margin-right: 35px;
       float: left;
+
+      &.back-btn {
+        display: inline-block;
+      }
     }
 
     .face.has-bubble-open .bubble {

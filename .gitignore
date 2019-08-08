@@ -5,6 +5,9 @@ node_modules
 *.tar.gz
 *.tar
 *.zip
+config.config
+config.*
+instagram_raw.json
 
 
 # Created by https://www.gitignore.io/api/sass,macos,jekyll,windows
